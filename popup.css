@@ -1,0 +1,87 @@
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+  width: 260px;
+  height: auto;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.status-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+#status {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+button {
+  background: #22c55e;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+button.disabled {
+  background: #ef4444;
+}
+
+footer {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Optional smooth transitions */
+#status b {
+  color: #16a34a;
+  transition: color 0.3s ease;
+}
+
+body.disabled #status b {
+  color: #ef4444;
+}
