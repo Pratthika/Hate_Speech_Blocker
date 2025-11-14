@@ -2,74 +2,7 @@
 console.log("Hate Speech Blocker (DEBUG Version) starting...");
 
 const blocklist = {
-  "english": [
-    "arse", "arsehead", "arsehole", "ass", "ass hole", "asshole", "bastard", "bitch", "bloody", "bollocks",
-    "breast", "brotherfucker", "bugger", "bullshit", "child-fucker", "christ on a bike", "christ on a cracker",
-    "cock", "cocksucker", "crap", "cunt", "dammit", "damn", "damned", "damn it", "dick", "dick-head", "dickhead",
-    "dumb ass", "dumb-ass", "dumbass", "dyke", "fag", "faggot", "fart", "father-fucker", "fatherfucker",
-    "fuck", "fucked", "fucker", "fucking", "fuck yourself", "god dammit", "goddammit", "god damn", "goddamn",
-    "goddamned", "goddamnit", "godsdamn", "hell", "holy shit", "horseshit", "in shit", "jackarse", "jack-ass",
-    "jackass", "jesus christ", "jesus fuck", "jesus harold christ", "jesus h. christ", "jesus, mary and joseph",
-    "jesus wept", "kike", "kiss my ass", "mental", "mother fucker", "mother-fucker", "motherfucker",
-    "nigga", "nigra", "penis", "pigfucker", "piss", "poop", "prick", "pussy", "retarded cunt", "shit", "shit ass",
-    "shite", "shut your ass", "sibling fucker", "sisterfuck", "sisterfucker", "slut", "son of a bitch",
-    "son of a whore", "spastic", "sweet jesus", "tranny", "twat", "wanker", "whore", "vagina"
-  ],
-  "hindi": [
-    "guddha naku", "guddha pagala dengutha", "aathu pooku", "aathulu", "aathulu peeku", "aathulu peekutha",
-    "aati mokka", "aatu leni mogga", "akka bokka lO naa sulla", "akka nee pooku dengutha", "amma pooku ki baanisa",
-    "amma pooku lo arati pandu", "aritipandu mogga", "attha pooku dengina alldu", "bochu", "bosudi",
-    "chilipiga thittatam", "chitthu pooka", "cutlet etthi guddha lo pettuko", "dengithe dayyalu pudatai", "dengu",
-    "dhani puku lo erugu", "doola lanja", "erri pooka", "erugu", "gaadida pichaloda", "gaja madda", "gajji modda",
-    "golli cheeku ra kodaka", "golli chekutha lanja", "gudda", "gudda naaku", "guddha cheeku", "gudha kindha kovvu pattindha",
-    "hasta prayogam chai", "jinniappa", "kammani pooku", "kojja", "kojja munda", "konamodda",
-    "kuddda chinchi pagal dengutha", "kukka -pooka", "kukka sulli", "kutha chimpi para dengutha (kcpd)",
-    "kuthuru vongudu..alludu dhengudu", "lafoot lanja", "langa vippavae lanjaa", "lanja", "lanja - kodka",
-    "lanja munda", "lanja pooka", "lanjakodka", "leki puku", "malvika", "marmangam", "modda", "modda cheeku lanja",
-    "modda kuduvu", "modda naaku", "modda notlo petti dengutha", "modda, lavada, daddu, magatanam", "muchchika, chanu mona",
-    "muddy lo velu petuko", "naa modda gudu", "ne akka nu denga", "ne akkan ma kukka dengha", "ne amma ni denga",
-    "ne amma pukkulo naa modda", "ne jathini kukka denga", "ne mama puku denga", "ne notlo naa suli", "ne pookula na sulli",
-    "nee aali pookulo rampam", "nee akkaani dengaa", "nee akkanu denga", "nee alini dengaa", "nee amma guddani denga",
-    "nee amma kuttani denga", "nee amma puku lo sulli", "nee amma roju na modda cheekuthundi", "nee ammani dengaa",
-    "nee ammanu denga", "nee ammanu dnegu", "nee kooturu ni denga", "nee notlo naa sulli", "nee pallu super",
-    "nee payal madhyalo na sulli", "nee pellaanni denga", "nee pooku chekutha", "nee pooku lo na gudda",
-    "nee pukulo naa sulli", "ni akkani pandulu denga", "ni gudha la gudu pedtha", "ni pukla na madda", "nihar", "banda pooku",
-    "ninnu dengutha", "nuvvu nee yendipoyina sulli", "paaki munda", "pedda salladhi", "pichi pukoda", "pichi pukudaana",
-    "piyya thinnu", "poi voungu ra", "pooku", "pooku pagaldenguta", "poooku chinchu", "pucci na kodaka", "pukku naaku",
-    "puku peka adistha", "puthhi", "sachinoda", "sallu dengutha", "sanalo bochho", "shaata", "sravan", "konda verri pooku",
-    "sulii", "sulli pattu", "teja", "adivi pooku", "teja trivikram", "thurku valagodtha", "vattakai", "vattalu",
-    "vedhava", "verri puka", "vongo petti dengutha lanja"
-  ],
-  "tamil": [
-    "otha", "watha", "ommala", "ommaley", "wommala", "okkala oli", "wokkala oli", "thayoli", "thevidiya",
-    "punda", "panda", "bunda", "loosu", "loosu punda", "loosu panda", "loosu bunda", "koodhi", "loosu koodhi",
-    "mayiraandi", "poramboku", "pannaada", "paradesi", "soothu", "kurudu", "sevudu", "mundam", "oombu",
-    "mazhumatta koodhi", "kena p", "okuradhu", "othuta", "puluthi", "lavadegabaal", "lavade", "lavada", "fuck",
-    "asshole", "motherfucker", "shit", "hoe", "bitch", "slut", "gigolo", "gawk", "backshot", "fingering", "69",
-    "wet", "dick", "hard", "blowjob", "handjob", "nigga", "black", "asian", "pin", "pound",
-    "தாயொழி", "ஓத்தா", "தெவிடியாப்பிள்ளை", "சூத்தமூடு", "பீ", "தெவிடியா", "புண்டை", "ஊம்பாதவாயா",
-    "நக்கிட்டுப்போ", "ஓத்திட்டுப்போ", "ஓம்மால", "ஓக்காளி", "புண்டை மவனே", "பொச்சு", "சுன்னி", "பூல்", "பூலு",
-    "குசு", "நாயே", "முலை", "அறிவு கெட்ட கூதி"
-  ],
-  "telugu": [
-    "aad", "aand", "bahenchod", "behenchod", "bhenchod", "bhenchodd", "b.c.", "bc", "bakchod", "bakchodd",
-    "bakchodi", "bevda", "bewda", "bevdey", "bewday", "bevakoof", "bevkoof", "bevkuf", "bewakoof", "bewkoof",
-    "bewkuf", "bhadua", "bhaduaa", "bhadva", "bhadvaa", "bhadwa", "bhadwaa", "bhosada", "bhosda", "bhosdaa",
-    "bhosdike", "bhonsdike", "bsdk", "b.s.d.k", "bhosdiki", "bhosdiwala", "bhosdiwale", "bhosadchodal",
-    "bhosadchod", "babbe", "babbey", "bube", "bubey", "bur", "burr", "buurr", "buur", "charsi", "chooche",
-    "choochi", "chuchi", "chhod", "chod", "chodd", "chudne", "chudney", "chudwa", "chudwaa", "chudwane",
-    "chudwaane", "choot", "chut", "chute", "chutia", "chutiya", "chutiye", "chuttad", "chutad", "dalaal", "dalal",
-    "dalle", "dalley", "fattu", "gadha", "gadhe", "gadhalund", "gaand", "gand", "gandu", "gandfat", "gandfut",
-    "gandiya", "gandiye", "goo", "gu", "gote", "gotey", "gotte", "hag", "haggu", "hagne", "hagney", "harami", "haramjada", "haraamjaada", "haramzyada", "haraamzyaada", "haraamjaade",
-    "haraamzaade", "haraamkhor", "haramkhor", "jhat", "jhaat", "jhaatu", "jhatu", "kutta", "kutte", "kuttey",
-    "kutia", "kutiya", "kuttiya", "kutti", "landi", "landy", "laude", "laudey", "laura", "lora", "lauda", "ling",
-    "loda", "lode", "lund", "launda", "lounde", "laundey", "laundi", "loundi", "laundiya", "loundiya", "lulli",
-    "maar", "maro", "marunga", "madarchod", "madarchodd", "madarchood", "madarchoot", "madarchut", "m.c.", "mc",
-    "mamme", "mammey", "moot", "mut", "mootne", "mutne", "mooth", "muth", "nunni", "nunnu", "paaji", "paji",
-    "pesaab", "pesab", "peshaab", "peshab", "pilla", "pillay", "pille", "pilley", "pisaab", "pisab", "pkmkb",
-    "porkistan", "raand", "rand", "randi", "randy", "suar", "tatte", "tatti", "tatty", "ullu"
-  ],
-  "violent": ["kill", "attack", "violence", "rape", "bomb"]
+ //hate speech blocklist set of words
 };
 
 let normalizedSet = new Set();
@@ -136,7 +69,7 @@ function loadBlocklistDirect() {
 // 2️⃣ PERSPECTIVE API SETUP (DEBUG VERSION)
 // ---------------------------------------------
 async function isAIHateSpeech(text) {
-  const API_KEY = 'AIzaSyCw85lrqDIlhPn9UKUfqJr4X_5gj87sODA'; 
+  const API_KEY = 'api_key'; 
   if (API_KEY === 'PASTE_YOUR_API_KEY_HERE') {
     console.warn("🔧 DEBUG: API Key is not set.");
     return false;
@@ -453,4 +386,5 @@ function injectCursorBlockCSS() {
   setupGlobalInteractionBlocker();
   injectCursorBlockCSS();
   console.log("Hate Speech Blocker (DEBUG Version) initialized.");
+
 })();
